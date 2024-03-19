@@ -1,16 +1,16 @@
-# shohastan.github.io
-Business &amp; Data Science portfolio
+# My Portfolio
+Work in progress...
 
 ## Education
 Business & Data Science BsC
 
 ## Work Experience
-None, lol
-- cooler project 1
-- cooler project 2
+Work in progress...
+- 
+- 
 
 ## Projects
-A really nice project
-- a 
-- b
-- c
+Work in progress...
+- 
+- 
+- 
