@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body {
+            font-family: 'Montserrat';
+            font-size: 16px;
+            background-color: #fff; /* Light grey background */
+            color: #333; /* Dark grey text */
+        }
+
+        .navbar {
+            background-color: #3daff5 !important; /* White background */
+            border-bottom: 1px solid #fff; /* Light grey border */
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-size: 2.5em;
+            color: #333 !important; /* Dark grey text */
+        }
+
+        .navbar-brand img.logo {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #333 !important; /* Dark grey text */
+            font-weight: normal; /* Ensures all nav links have normal font weight */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #fff !important; /* Light green hover */
+        }
+
+        .header, .container {
+            background-color: #fff; /* Light grey background */
+        }
+
+        #contact {
+            margin-top: 50px;
+        }
+
+        #contact h1, .container h1 {
+            color: #333; /* Dark grey text */
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        #contact p, .container p {
+            color: #333; /* Medium grey text */
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+
+        #contact h2 {
+            color: #333; /* Dark grey text */
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        #contact ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #contact ul li {
+            color: #333; /* Dark grey text */
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        #contact .row {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #contact .img-fluid {
+            max-height: 300px; /* Adjust the height as needed */
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .btn-primary {
+            background-color: #3daff5 !important; /* Light green button */
+            border-color: #3daff5 !important; /* Light green border */
+            color: #333;
+        }
+
+        .btn-primary:hover {
+            background-color: #3daff5!important; /* Darker green on hover */
+            border-color: #3daff5 !important; /* Darker green on hover */
+        }
+
+        footer {
+            background-color: #3daff5; /* White background */
+            color: #333; /* Dark grey text */
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid #3daff5; /* Light grey border */
+        }
+    @media (max-width: 768px) {
+        .navbar-brand {
+            font-size: 1.2em;
+        }
+
+        .navbar-brand img.logo {
+            height: 40px;
+            margin-right: 5px;
+        }
+
+        #about .img-fluid, #contact .img-fluid {
+            max-height: 200px;
+        }
+
+        .team-member {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .team-member img {
+            width: 100px;
+            height: 100px;
+        }
+    }
+    @media (max-width: 576px) {
+        .navbar-brand {
+            font-size: 1em;
+        }
+
+        .navbar-brand img.logo {
+            height: 30px;
+            margin-right: 5px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light custom-navbar">
+        <a class="navbar-brand" href="#">
+            <a class="nav-link" href="index.html"><img src="images/new_logo.jpg" alt="WeatherApp Logo" class="logo" style="height: 110px;"></a>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav> <!--For the 3 html-->
+    <section id="contact" class="container mt-5">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="contact-info animate__animated animate__fadeInLeft">
+                    <h1>Contact Us</h1>
+                    <p>Need to get in touch with us? Either fill out the form with your inquiry or find the department email you'd like to contact below.</p>
+                    <img src="images/contact_image1.png" alt="Contact Us" class="img-fluid mt-3" style="max-width: 90%; height: auto; max-height: 400px;">
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="contact-form-container animate__animated animate__fadeInRight">
+                    <form action="sendEmail.php" method="post" class="contact-form">
+                        <div class="form-group">
+                            <label for="first-name">First name</label>
+                            <input type="text" id="first-name" name="first_name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last name</label>
+                            <input type="text" id="last-name" name="last_name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">What can we help you with?</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <p>&copy; 2024 WeatherApp.</p>   
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

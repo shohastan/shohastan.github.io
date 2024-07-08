@@ -1,0 +1,8 @@
+{
+    "type": "module",
+    "name": "website-weather",
+    "version": "1.0.0",
+    "dependencies": {
+      "chart.js": "^3.7.0"
+    }
+  }
