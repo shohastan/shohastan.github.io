@@ -1,4 +1,4 @@
-const apiKey = 'e857b4ac2846e6d08f9bf7b5148e2e25'; // Replace with your OpenWeatherMap API key
+const apiKey = 'cf5ad875f3abb04224dc330cae50f22d'; // Replace with your OpenWeatherMap API key
 let currentUnit = 'metric'
 
 // Function to get current weather
