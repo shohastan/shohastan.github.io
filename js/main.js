@@ -1,4 +1,4 @@
-const apiKey = 'cf5ad875f3abb04224dc330cae50f22d'; // Replace with your OpenWeatherMap API key
+const apiKey = 'e857b4ac2846e6d08f9bf7b5148e2e25'; // Replace with your OpenWeatherMap API key
 let currentUnit = 'metric'
 
 // Function to get current weather
@@ -61,7 +61,7 @@ function displayWeather(data) {
     if (data.name) {
         locationInfo += `${data.name}`;  // Append city name if available
     }
-    
+
     if (data.sys && data.sys.country) {
         if (!data.name) {
             locationInfo = data.sys.country;  // Set only country if city name is absent
@@ -103,8 +103,8 @@ async function ipLookUp() {
             if (!response.ok) {
                 throw new Error(`Weather API error: ${response.statusText}`);
             }
-             const data = await response.json();
-             if (data.length > 0) {
+            const data = await response.json();
+            if (data.length > 0) {
                 const { lat, lon } = data[0];
                 getCurrentWeather(lat, lon);
                 getWeeklyWeatherForecast(lat, lon);
@@ -115,12 +115,12 @@ async function ipLookUp() {
         } catch (error) {
             console.error('Error fetching IP location:', error);
             document.getElementById('weather-info').innerHTML = '<p>Error fetching location data. Please try again later.</p>';
-            document.getElementById('weekly-weather-info').innerHTML= '<p>Error fetching location data. Please try again later.</p>';
+            document.getElementById('weekly-weather-info').innerHTML = '<p>Error fetching location data. Please try again later.</p>';
         }
-    }  catch (error) {
+    } catch (error) {
         console.error('Error fetching IP location:', error);
         document.getElementById('weather-info').innerHTML = '<p>Error fetching location data. Please try again later.</p>';
-        document.getElementById('weekly-weather-info').innerHTML= '<p>Error fetching location data. Please try again later.</p>';
+        document.getElementById('weekly-weather-info').innerHTML = '<p>Error fetching location data. Please try again later.</p>';
     }
 }
 
@@ -146,7 +146,7 @@ function displayWeeklyForecast(data) {
 
     const labels = [];
     const temperatures = [];
-    const temperatures2=[]
+    const temperatures2 = []
 
     data.list.forEach(day => {
         const date = new Date(day.dt * 1000); // Convert UNIX timestamp to JavaScript Date object
@@ -175,11 +175,11 @@ function displayWeeklyForecast(data) {
         weeklyForecastContainer.appendChild(forecastItem);
     });
 
-    const weeklyForecastChart=document.getElementById('chart');
+    const weeklyForecastChart = document.getElementById('chart');
     weeklyForecastChart.innerHTML = '';
     const canvas = document.createElement('canvas');
-    canvas.id='temperature-chart';
-    canvas.height=400;
+    canvas.id = 'temperature-chart';
+    canvas.height = 400;
     weeklyForecastChart.appendChild(canvas);
 
     // Create line chart
@@ -201,21 +201,21 @@ function displayWeeklyForecast(data) {
                 borderColor: '#f0aa4f',
                 backgroundColor: '#f0aa4f52',
                 pointHoverBackgroundColor: '#c9ff70',
-                pointRadius:3,
+                pointRadius: 3,
                 tension: 0.1,
                 fill: true,
             }
-        
-        ]
+
+            ]
         },
         options: {
             animations: {
                 tension: {
-                  duration: 1000,
-                  easing: 'linear',
-                  from: 0.5,
-                  to: 0,
-                  loop: true
+                    duration: 1000,
+                    easing: 'linear',
+                    from: 0.5,
+                    to: 0,
+                    loop: true
                 }
             },
             responsive: true,
@@ -241,7 +241,7 @@ function displayWeeklyForecast(data) {
                     beginAtZero: true
                 }
             },
-            
+
         }
     });
 }
@@ -260,7 +260,7 @@ function setUnit(unit) {
     }
 }
 
-document.getElementById('city-search').addEventListener('keypress', function(event) {
+document.getElementById('city-search').addEventListener('keypress', function (event) {
     if (event.key === 'Enter') {
         searchCity();
     }
@@ -272,27 +272,27 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
- 
- 
+
+
 // Function to update the weather information in the DOM
 //function updateWeatherInfo(data) {
 //    const weatherInfo = document.getElementById('weather-info');
-  //  const weatherDescription = data.weather[0].description;
-    //const temp = data.main.temp;
-    //const city = data.name;
-    //weatherInfo.innerHTML = `
-    //    <h2>${city}</h2>
-    //    <p>${weatherDescription}</p>
-    //    <p>${temp} &deg;C</p>
-    //`;
-    // Update weather image based on condition
-    //updateWeatherImage(weatherDescription);
+//  const weatherDescription = data.weather[0].description;
+//const temp = data.main.temp;
+//const city = data.name;
+//weatherInfo.innerHTML = `
+//    <h2>${city}</h2>
+//    <p>${weatherDescription}</p>
+//    <p>${temp} &deg;C</p>
+//`;
+// Update weather image based on condition
+//updateWeatherImage(weatherDescription);
 //}
 
 // Function to update weather image based on condition
 //function updateWeatherImage(description) {
 //    const weatherInfo = document.getElementById('weather-info');
- //   let imageUrl;
+//   let imageUrl;
 //    if (description.includes('sunny')) {
 //        imageUrl = 'images/sunny.png';
 //    } else if (description.includes('cloudy')) {
@@ -310,39 +310,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Function to get weather forecast
 //function getWeatherForecast(city) {
-    //fetch(`https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&cnt=7&appid=${apiKey}&units=metric`)
-        //.then(response => response.json())
-        //.then(data => {
-       //     updateForecastChart(data);
-        //})
-        //.catch(error => console.error('Error fetching forecast data:', error));
+//fetch(`https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&cnt=7&appid=${apiKey}&units=metric`)
+//.then(response => response.json())
+//.then(data => {
+//     updateForecastChart(data);
+//})
+//.catch(error => console.error('Error fetching forecast data:', error));
 //}
 
 // Function to update the forecast chart
 //function updateForecastChart(data) {
-    //const ctx = document.getElementById('forecastChart').getContext('2d');
-    //const labels = data.list.map(item => new Date(item.dt * 1000).toLocaleDateString());
-    //const temperatures = data.list.map(item => item.temp.day);
+//const ctx = document.getElementById('forecastChart').getContext('2d');
+//const labels = data.list.map(item => new Date(item.dt * 1000).toLocaleDateString());
+//const temperatures = data.list.map(item => item.temp.day);
 
-    //new Chart(ctx, {
-        //type: 'line',
-        //data: {
-          //  labels: labels,
-          //  datasets: [{
-           //     label: 'Temperature (°C)',
-           //     data: temperatures,
-           //     borderColor: 'rgba(75, 192, 192, 1)',
-            //    borderWidth: 1
-         //   }]
-      //  },
-       // options: {
-       //     scales: {
-       //         y: {
-      //              beginAtZero: true
-      //          }
-     //       }
-     //   }
-  //  });
+//new Chart(ctx, {
+//type: 'line',
+//data: {
+//  labels: labels,
+//  datasets: [{
+//     label: 'Temperature (°C)',
+//     data: temperatures,
+//     borderColor: 'rgba(75, 192, 192, 1)',
+//    borderWidth: 1
+//   }]
+//  },
+// options: {
+//     scales: {
+//         y: {
+//              beginAtZero: true
+//          }
+//       }
+//   }
+//  });
 //}
 
 // Call the function to get user's location weather on page load
